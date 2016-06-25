@@ -1,0 +1,153 @@
+.navbar-header > img {
+    height: 50px;
+    padding: 15px;
+    /*width: auto;*/
+}
+
+#details {
+    margin-top: 20px;
+    overflow-y: scroll;
+    height: 300px;
+}
+
+#details > .row {
+    margin-bottom: 10px;
+}
+
+#signup {
+    height: 100vh;
+    margin: 0 auto;
+
+}
+
+#menus {
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.btn {
+
+    border-radius: 0;
+    border: 3px solid #2B3856;
+
+}
+
+.top-nav {
+    border-radius: 0px;
+    margin-bottom: 0px;
+}
+
+#bottom {
+    margin: 10px 0 10px 0;
+    text-align: center;
+
+}
+
+.profile-top-row {
+    height: 400px;
+    background: url("../images/profile.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.profile-box-top {
+    height: 400px;
+    width: 100%;
+    background: rgba(30, 144, 256, .5);
+    z-index: 1 !important;
+}
+
+.test {
+    color: white;
+
+}
+
+.test > span {
+    font-size: 60px;
+
+}
+
+.logo {
+
+    font-size: 20px;
+}
+
+.logo h3 {
+    color: white;
+}
+
+#sections {
+    text-align: center;
+    font-size: 40px;
+}
+
+.stars {
+    font-size: 30px;
+}
+
+.help-block {
+    color: white;
+}
+
+hr {
+    border-width: 1px;
+    border-color: black;
+}
+
+a {
+    color: black;
+
+}
+
+textarea {
+    height: 350px;
+}
+
+.btn-primary {
+    background-color: #2B3856;
+}
+
+.selected-btn {
+    color: green;
+}
+.color-1{
+    background-color: green;
+    width:90%;
+    display:inline-block;
+    float: left;
+}
+.color-2{
+    background-color:aqua;
+    width:70%;
+    display:inline-block;
+        float: left;
+
+}
+.color-3{
+    background-color: yellow;
+        width:50%;
+        display:inline-block;
+            float: left;
+
+
+}
+.color-4{
+    background-color: orange;
+        width:30%;
+        display:inline-block;
+            float: left;
+
+
+}
+.color-5{
+    background-color: red;
+    width:10%;
+    display:inline-block;
+        float: left;
+
+
+}
+.star1{
+    font-size: 20px;
+}
+

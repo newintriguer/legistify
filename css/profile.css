@@ -1,0 +1,9 @@
+body {
+    background-image: url("profile.jpg");
+    
+}
+.navbar-header>img {
+  height: 50px;
+  padding: 15px;
+  /*width: auto;*/
+}

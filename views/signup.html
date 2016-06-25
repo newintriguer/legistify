@@ -1,0 +1,249 @@
+<div id="signup"  >
+   <div class="row">
+      <h1 class="col-md-8 col-md-offset-2">Lawyer SignUp Form</h1>
+      <div class="col-md-3 col-md-offset-2" style="background-color:#d3d3d3;">
+         <div id="menus">
+            <button type="button" class="btn btn-lg btn-block" ng-class="{'btn-primary':showScreen===0 , 'btn-default': showScreen!==0}"><strong>User Details  <span ng-show="showScreen >0" class="glyphicon glyphicon-ok pull-right selected-btn"></span></strong></button>
+            <button type="button" class="btn btn-lg btn-block" ng-class="{'btn-primary':showScreen===1 , 'btn-default': showScreen!==1}"><strong>Legal Info <span ng-show="showScreen >1" class="glyphicon glyphicon-ok pull-right selected-btn"></span></strong></button>
+            <button type="button" class="btn btn-lg btn-block" ng-class="{'btn-primary':showScreen===2 , 'btn-default': showScreen!==2}"><strong>Basic Details  <span ng-show="showScreen >2" class="glyphicon glyphicon-ok pull-right selected-btn"></span></strong></button>
+            <button type="button" class="btn btn-lg btn-block" ng-class="{'btn-primary':showScreen===3 , 'btn-default': showScreen!==3}"><strong>Bar Info  <span ng-show="showScreen >3" class="glyphicon glyphicon-ok pull-right selected-btn"></span></strong></button>
+            <div class="form-group">
+               <span class="text-muted"><em><span style="color:red;">*</span> Indicates required field </em></span>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-6" id="details" ng-show="showScreen === 0">
+         <div class="row">
+            <div class="col-md-3" style="width:25%;">
+               <strong><span style="color:#2B3856;">*</span>Name</strong>
+            </div>
+            <div class="col-md-9" style="width:75%;">
+               <input type="text" ng-model="newPost.name"class="form-control" id="Name" placeholder="Arjun Verma">
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-md-3" style="width:25%;">
+               <strong><span style="color:#2B3856;">*</span>Email</strong>
+            </div>
+            <div class="col-md-9" style="width:75%;">
+               <input type="email" ng-model="newPost.email" class="form-control" id="Email" placeholder="your_email@legistify.com">
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-md-3" style="width:25%;">
+               <strong><span style="color:#2B3856;">*</span>Username</strong>
+            </div>
+            <div class="col-md-9" style="width:75%;">
+               <input type="text" ng-model="newPost.username"class="form-control" id="Year" placeholder="Username">
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-md-3" style="width:25%;">
+               <strong><span style="color:#2B3856;">*</span>Password</strong>
+            </div>
+            <div class="col-md-9" style="width:75%;">
+               <input type="password" ng-model="newPost.password"class="form-control" id="Year" placeholder="Password">
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-md-3" style="width:25%;">
+               <strong><span style="color:#2B3856;">*</span>D.O.B</strong>
+            </div>
+            <div class="col-md-9" style="width:75%;">
+               <input type="date" ng-model="newPost.dob"class="form-control" id="Year" placeholder="dd/mm/yy">
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-md-3" style="width:25%;">
+               <strong><span style="color:#2B3856;">*</span>Gender</strong>
+            </div>
+            <div class="col-md-9" style="width:75%;">
+               <input type="radio" name="gender" value="male" ng-model="newPost.gender">Male
+               <input type="radio" name="gender" value="female" ng-model="newPost.gender">Female
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-md-3" style="width:25%;">
+               <strong><span style="color:#2B3856;">*</span>Mobile</strong>
+            </div>
+            <div class="col-md-9" style="width:75%;">
+               <input type="text" ng-model="newPost.mobile"class="form-control" id="mobile" placeholder="Mobile">
+            </div>
+         </div>
+         <div class="row">
+            
+            <div ng-repeat="college in newPost.education track by $index">
+              <div class="col-md-3" style="width:25%;">
+                <strong><span style="color:#2B3856;">*</span>Education #{{$index+1}}</strong>
+              </div>
+               <div class="col-md-9" style="width:75%;margin-bottom:10px;">
+                  <input type="text" class="form-control" id="mobile" placeholder="Enter Law College">
+               </div>
+               <div class="col-md-9 col-md-offset-3" style="width:75%;margin-bottom:10px;">
+                  <input type="text" class="form-control" id="mobile" placeholder="Degree">
+               </div>
+               <div class="col-md-9 col-md-offset-3" style="width:75%;">
+                  <input type="text" class="form-control" id="mobile" placeholder="Year of Graduation">
+               </div>
+            </div>
+            <button type="button" class="btn btn-default btn-xs pull-right" style="margin:5px 10px 0px 0px;" ng-click="addEducation()"><strong>+ADD</strong></button>
+         </div>
+      </div>
+ <!--legalinfo section  -->
+    <div class="col-md-6" id="details" ng-show="showScreen == 1">
+         <div class="row">
+            <div class="col-md-3" style="width:25%;">
+               <strong><span style="color:#2B3856;">*</span>Practice Areas</strong>
+            </div>
+            <div class="col-md-9" style="width:75%;">
+               <input type="text" class="form-control"  ng-model="newPost.practiceArea" placeholder="Select Max four areas">
+            </div>
+         </div>
+         <div class="row">
+          <div ng-repeat="court in newPost.court track by $index">
+            <div class="col-md-3" style="width:25%;">
+               <strong><span style="color:#2B3856;">*</span>Court#{{$index+1}}</strong>
+            </div>
+            <div class="col-md-6" style="width:60%;" >
+               <input type="email"  class="form-control" id="Email" placeholder="Add your Court">
+            </div>
+           </div> 
+            <div class="col-md-6" style="width:15%;">
+               <button type="button" class="btn btn-default btn-xs pull-right" style="margin:5px 10px 0px 0px;"ng-click="addCourt()"><strong>+ADD</strong></button>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-md-3" style="width:25%;">
+               <strong><span style="color:#2B3856;">*</span>State</strong>
+            </div>
+            <div class="col-md-9" style="width:75%;">
+               <input type="text"ng-model="newPost.state" class="form-control" id="Year" placeholder="Delhi">
+            </div>
+         </div>
+         
+         
+
+         <div class="row">
+            <div class="col-md-3" style="width:25%;">
+               <strong><span style="color:#2B3856;">*</span>Office Address</strong>
+            </div>
+            <div class="col-md-9" style="width:75%;">
+               <input type="text" ng-model="newPost.office" class="form-control" id="mobile" placeholder="Mobile">
+            </div>
+         </div>
+         
+      </div>
+     <!--Basic details sectioon  -->
+      <div class="col-md-6" ng-show="showScreen === 2" id="details">
+         <div class="row">
+            <div class="col-md-3" style="width:25%;">
+               <strong><span style="color:#2B3856;">*</span>Summary</strong>
+            </div>
+            <div class="col-md-9" style="width:75%;">
+               <textarea class="form-control" placeholder="Min 160 Characters" rows="6"></textarea>
+            </div>
+         </div>
+         
+            
+            <div >
+              <div class="col-md-3" style="width:25%;">
+                <strong><span style="color:#2B3856;">*</span>Experience #{{$index+1}}</strong>
+              </div>
+               <div class="col-md-9" style="width:75%;margin-bottom:10px;">
+                  <input type="text" class="form-control"placeholder="Job Title">
+               </div>
+               <div class="col-md-9 col-md-offset-3" style="width:75%;margin-bottom:10px;">
+                  <input type="text" class="form-control" id="mobile" placeholder="Company Name">
+               </div>
+               <div class="col-md-9 col-md-offset-3" style="width:75%; display:inline">
+                  From:<input type="text" class="form-control" style="width:30%;">
+                  To:<input type="text" class="form-control"  style="width:60%;">
+               </div>
+            </div>
+            <!-- honours -->
+            <div class="row">
+            
+            <div ng-repeat="college in newPost.education track by $index">
+              <div class="col-md-3" style="width:25%;">
+                <strong><span style="color:#2B3856;">*</span>Honours #{{$index+1}}</strong>
+              </div>
+               <div class="col-md-9" style="width:75%;margin-bottom:10px;">
+                  <input type="text" class="form-control" id="mobile" placeholder="Name">
+               </div>
+               <div class="col-md-9 col-md-offset-3" style="width:75%;margin-bottom:10px;">
+                  <input type="text" class="form-control" id="mobile" placeholder="Granted By">
+               </div>
+               <div class="col-md-9 col-md-offset-3" style="width:75%;">
+                  <input type="text" class="form-control" id="mobile" placeholder="Year">
+               </div>
+            </div>
+            <button type="button" class="btn btn-default btn-xs pull-right" style="margin:5px 10px 0px 0px;" ng-click="addEducation()"><strong>+ADD</strong></button>
+         </div>
+         <!-- Publications -->
+            <div class="row">
+            
+            <div ng-repeat="college in newPost.education track by $index">
+              <div class="col-md-3" style="width:25%;">
+                <strong><span style="color:#2B3856;">*</span>Publications #{{$index+1}}</strong>
+              </div>
+               <div class="col-md-9" style="width:75%;margin-bottom:10px;">
+                  <input type="text" class="form-control" id="mobile" placeholder="Title">
+               </div>
+               
+               <div class="col-md-9 col-md-offset-3" style="width:75%;">
+                  <input type="text" class="form-control" id="mobile" placeholder="Year">
+               </div>
+            </div>
+            <button type="button" class="btn btn-default btn-xs pull-right" style="margin:5px 10px 0px 0px;" ng-click="addEducation()"><strong>+ADD</strong></button>
+         </div>
+            <button type="button" class="btn btn-default btn-xs pull-right" style="margin:5px 10px 0px 0px;" ng-click="addEducation()"><strong>+ADD</strong></button>
+         </div>
+      
+<!-- barinfo section -->
+      <div class="col-md-6" ng-show="showScreen === 3 " id="details">
+         <div class="row">
+            <div class="col-md-3" style="width:25%;">
+               <strong><span style="color:#2B3856;">*</span>State</strong>
+            </div>
+            <div class="col-md-9" style="width:75%;">
+               <input type="text" ng-model="newPost.office" class="form-control" id="mobile" placeholder="Delhi">
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-md-3" style="width:25%;">
+               <strong><span style="color:#2B3856;">*</span>Bar I.D</strong>
+            </div>
+            <div class="col-md-9" style="width:75%;">
+               <input type="text" ng-model="newPost.office" class="form-control" id="mobile" placeholder="Bar I.D">
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-md-3" style="width:25%;">
+               <strong><span style="color:#2B3856;">*</span>Year</strong>
+            </div>
+            <div class="col-md-9" style="width:75%;">
+               <input type="text" ng-model="newPost.office" class="form-control" id="mobile" placeholder="Year">
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-md-3" style="width:25%;">
+               <strong><span style="color:#2B3856;">*</span>Profile Pic</strong>
+            </div>
+            <div class="col-md-9 form-group" >
+               <input type="file" >
+               <p class="help-block">(Max 2mb only jpg,png allowed )</p>
+            </div>
+            <form>
+
+         </div>
+
+
+      </div>
+
+   </div>
+   
+   <div id="bottom">
+      <button type="button" ng-click="changeScreen('back')"class="btn btn-default" style="margin-right:5px;" ><strong>Back</strong></button>
+      <button type="button" ng-click="changeScreen('next')" class="btn btn-default" style="margin-left:5px;"><strong>Next</strong></button>
+   </div>
+</div>

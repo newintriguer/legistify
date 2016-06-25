@@ -1,0 +1,41 @@
+<!DOCTYPE html >
+<html ng-app="mainApp">
+  <head>
+    <title>Legistify</title>
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    
+    
+  </head>
+  <body>      
+    <nav class="navbar navbar-inverse top-nav">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <img class="pull-left" src="images/logo.png" >
+          <a class="navbar-brand" href="#">LEGISTIFY</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li ><a href="#/profile">ABOUT</a></li>
+          <li><a href="#">DOCUMENTS</a></li>
+          <li><a href="#">RESEARCH</a></li> 
+          <li><a href="#">LOGIN</a></li> 
+          <li class="active"><a href="#">FOR LAWYERS</a></li> 
+        </ul>
+      </div>
+    </nav>
+    <div ng-view></div>
+
+
+
+
+    <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/angular-route/angular-route.min.js"></script>
+    <script src="js/script.js"></script>
+
+       
+  </body>
+</html>

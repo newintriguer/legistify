@@ -1,0 +1,194 @@
+<div class="container-fluid profile-container">
+   <div class="row profile-top-row">
+      <div class="profile-box-top">
+         <div class="row">
+            <div class="col-md-3 ">
+               <img src="images/profile_icon.png">
+            </div>
+            <div class="col-md-6 test">
+               <span>{{profileData.name}}</span>
+               <div class="row">
+                  <div class="col-sm-6 ">
+                     <p>Practice Areas</p>
+                     <div ng-repeat="item in profileData.records">{{item}}</div>
+                  </div>
+                  <div class="col-md-6 ">
+                     <p><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Delhi</p>
+                     <p><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> 12 Years
+                        Experience
+                     </p>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-sm-6">
+                     <h3>User Reviews</h3>
+                     <div class='stars'>
+                        <span ng-repeat='item in loop' class="glyphicon glyphicon-star"></span>
+                     </div>
+                     <p class="help-block">(From 1000 Reviews)</p>
+                  </div>
+                  <div class="col-sm-6 ">
+                     <h3>Legistify Ratings</h3>
+                     <div class='stars'>
+                        <span ng-repeat='item in loop' class="glyphicon glyphicon-star"></span>
+                     </div>
+                     <p class="help-block">(5 out of 5 stars)</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<div style="text-align:center; font-size:40px; ">
+   <a ng-click='about = true' style="margin-right:10px; cursor: pointer;"> About </a>
+   <a ng-click='about = false' style="margin-left:10px; cursor: pointer;"> Reviews </a>
+</div>
+<!-- reviews section -->
+
+<div  style="padding-top:70px;" ng-hide="about">
+    <div class="row">
+        <div class="col-md-3 col-md-offset-1" style=" text-align:center;">
+          <h1 style="font-size:6em">{{profileData.avgRating}}</h1>
+          <span  ng-repeat='item in loop' class="glyphicon glyphicon-star stars"></span>
+       </div>
+       <div class="col-md-5" >
+          <div ng-repeat="(key,userReview)  in profileData.userReviews">
+             <div class="glyphicon glyphicon-star star1" style="display:inline-block; width:2%"></div>
+             <div style="display:inline-block; width:2%">{{key}}</div>
+             <div style="display:inline-block; width:70%">
+                <div  ng-class="{'color-{{key}}':true}"style="height:20px; margin-top:7px;"></div>
+                <div style="display:inline-block; float:left" >{{userReview.rate}}</div>
+             </div>
+          </div>
+       </div>
+       <div class="col-md-2">
+          <button type="button" class="btn btn-lg btn-block" ><strong><span class="glyphicon glyphicon-pencil"></span>Write a Review</strong></button>
+        </div>
+    </div>
+   <div  class="col-md-10 col-md-offset-1" ng-repeat="review in profileData.reviews" style="margin-bottom:10px; margin-bottom:30px;">
+      <img ng-src="{{review.img}}" style="height:40px" class="pull-left">
+      <div class="col-md-10">
+         <strong>{{review.name}}</strong></br>
+         <strong>{{review.subject}}</strong></br>
+         {{review.review}}
+      </div>
+   </div>
+</div>
+</div>
+<!-- About section -->
+<div ng-show="about">
+   <div class="row" >
+      <div class="col-md-4 col-md-offset-2" style="font-size:20px">
+         <h1>Basic Details</h1>
+         <hr>
+         <strong>Gender:</strong>{{profileData.basicInfo.gender}}</br>
+         <strong>DOB:</strong>{{profileData.basicInfo.dob}}</br>
+         <strong>Court</strong>
+         <div ng-repeat="data in profileData.basicInfo.court">{{data}}</div>
+      </div>
+      <div class="col-md-4 ">
+         <h1>Legistify Contributions</h1>
+         <hr>
+         <button type="button" class="btn btn-default btn-lg btn-block" style="width:75%;"><strong>Legal
+         Answers</strong></button>
+         <button type="button" class="btn btn-default btn-lg btn-block" style="width:75%;"><strong>Legal
+         Answers</strong></button>
+      </div>
+      <div class="col-md-8 col-md-offset-2">
+         <h1>Educational Qualifications</h1>
+         <hr>
+         <div class="row">
+            <div class="col-md-6">
+               <h3>College Name</h3>
+               <h4>Mercer university,school of law</h4>
+               <h4>Mercer university,school of law</h4>
+               <h4>Mercer university,school of law</h4>
+            </div>
+            <div class="col-md-3">
+               <h3>Degree</h3>
+               <h4>LLB</h4>
+               <h4>LLB</h4>
+               <h4>LLB</h4>
+            </div>
+            <div class="col-md-3">
+               <h3>Graduated</h3>
+               <h4>1990</h4>
+               <h4>1990</h4>
+               <h4>1990</h4>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-8 col-md-offset-2">
+         <h1>Summary</h1>
+         <hr>
+         <h4>{{profileData.summary}}</h4>
+      </div>
+      <div class="col-md-8 col-md-offset-2">
+         <h1>Work Experience</h1>
+         <hr>
+         <div class="row">
+            <div class="col-md-6">
+               <h3>Title</h3>
+               <h4>Mercer university,school of law</h4>
+               <h4>Mercer university,school of law</h4>
+               <h4>Mercer university,school of law</h4>
+            </div>
+            <div class="col-md-3">
+               <h3>Granted By</h3>
+               <h4>LLB</h4>
+               <h4>LLB</h4>
+               <h4>LLB</h4>
+            </div>
+            <div class="col-md-3">
+               <h3>Year</h3>
+               <h4>1990</h4>
+               <h4>1990</h4>
+               <h4>1990</h4>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="col-md-8 col-md-offset-2">
+      <h1>Honours</h1>
+      <hr>
+      <div class="row">
+         <div class="col-md-6">
+            <h3>Title</h3>
+            <h4>Mercer university,school of law</h4>
+            <h4>Mercer university,school of law</h4>
+            <h4>Mercer university,school of law</h4>
+         </div>
+         <div class="col-md-3">
+            <h3>Granted By</h3>
+            <h4>LLB</h4>
+            <h4>LLB</h4>
+            <h4>LLB</h4>
+         </div>
+         <div class="col-md-3">
+            <h3>Year</h3>
+            <h4>1990</h4>
+            <h4>1990</h4>
+            <h4>1990</h4>
+         </div>
+      </div>
+   </div>
+   <div class="col-md-8 col-md-offset-2">
+      <h1>Publications</h1>
+      <hr>
+      <div class="row">
+         <div class="col-md-6">
+            <h3>Title</h3>
+            <h4>Mercer university,school of law</h4>
+            <h4>Mercer university,school of law</h4>
+            <h4>Mercer university,school of law</h4>
+         </div>
+         <div class="col-md-3 col-md-offset-3">
+            <h3>Year</h3>
+            <h4>1990</h4>
+            <h4>1990</h4>
+            <h4>1990</h4>
+         </div>
+      </div>
+   </div>
+</div>
